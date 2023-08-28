@@ -1,8 +1,18 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import NotFound from './components/NotFound';
+
 function App() {
   return (
-    <div className="App">
-      <h1>Space Travelers Hub</h1>
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<div><h1>Rockets</h1></div>} />
+        <Route path="/missions" element={<div><h1>Missions</h1></div>} />
+        <Route path="/profile" element={<div><h1>profile</h1></div>} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </Router>
   );
 }
 
