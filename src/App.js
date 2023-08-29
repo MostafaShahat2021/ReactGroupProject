@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound';
+import Mission from './Pages/Mission';
 
 function App() {
   return (
@@ -9,27 +10,20 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={(
+          element={
             <div>
               <h1>Rockets</h1>
             </div>
-          )}
+          }
         />
-        <Route
-          path="/missions"
-          element={(
-            <div>
-              <h1>Missions</h1>
-            </div>
-          )}
-        />
+        <Route path="/missions" element={<Mission />} />
         <Route
           path="/profile"
-          element={(
+          element={
             <div>
               <h1>profile</h1>
             </div>
-          )}
+          }
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
