@@ -22,7 +22,7 @@ function Navbar() {
               exact
               className={isActive ? ' active-link' : 'nav-link'}
               to="/"
-            >
+            />
             <NavLink className={isActive ? ' active-link' : 'nav-link'} to="/">
               Rockets
             </NavLink>
