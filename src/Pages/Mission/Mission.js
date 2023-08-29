@@ -27,7 +27,7 @@ function Mission() {
                 <th>Mission</th>
                 <th>Description</th>
                 <th>Status</th>
-                <th />
+                <th aria-label="Save" />
               </tr>
             </thead>
             <tbody>

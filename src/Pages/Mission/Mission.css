@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
 }
+
 table {
   width: 95%;
   border-collapse: collapse;
@@ -33,6 +34,7 @@ table tbody tr:nth-child(even) {
 .member {
   white-space: nowrap;
 }
+
 .member span {
   background-color: #838181;
   color: #fff;

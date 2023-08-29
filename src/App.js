@@ -10,20 +10,20 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={
+          element={(
             <div>
               <h1>Rockets</h1>
             </div>
-          }
+          )}
         />
         <Route path="/missions" element={<Mission />} />
         <Route
           path="/profile"
-          element={
+          element={(
             <div>
               <h1>profile</h1>
             </div>
-          }
+          )}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
