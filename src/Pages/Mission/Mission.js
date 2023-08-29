@@ -9,8 +9,6 @@ function Mission() {
 
   const handleJoinMission = (id) => {
     dispatch(joinMission(id));
-    console.log(dispatch(joinMission(id)));
-    console.log(id);
   };
 
   useEffect(() => {
