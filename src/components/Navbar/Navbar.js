@@ -5,6 +5,7 @@ import './Navbar.css';
 function Navbar() {
   const isActive = useMatch({
     path: '/',
+    exact: true,
   });
   return (
     <nav>
@@ -17,6 +18,11 @@ function Navbar() {
       <div>
         <ul className="navbar">
           <li className="navbar-brand">
+            <NavLink
+              exact
+              className={isActive ? ' active-link' : 'nav-link'}
+              to="/"
+            />
             <NavLink className={isActive ? ' active-link' : 'nav-link'} to="/">
               Rockets
             </NavLink>
