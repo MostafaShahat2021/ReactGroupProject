@@ -5,6 +5,7 @@ import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound';
 import Rockets from './components/rockets/Rockets';
 import { fetchRocketsData } from './redux/rockets/rocketsSlice';
+import Mission from './Pages/Mission/Mission';
 
 function App() {
   const dispatch = useDispatch();
@@ -21,14 +22,7 @@ function App() {
           path="/"
           element={<Rockets />}
         />
-        <Route
-          path="/missions"
-          element={(
-            <div>
-              <h1>Missions</h1>
-            </div>
-          )}
-        />
+        <Route path="/missions" element={<Mission />} />
         <Route
           path="/profile"
           element={(
