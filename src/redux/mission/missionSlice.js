@@ -14,8 +14,7 @@ export const fetchMission = createAsyncThunk(
       const response = await axios.get(
         'https://api.spacexdata.com/v3/missions',
       );
-      const { data } = response;
-      return data;
+      return response.data;
     } catch (error) {
       return error;
     }
@@ -36,7 +35,7 @@ const missionSlice = createSlice({
     });
     builder.addCase(fetchMission.rejected, (state, action) => {
       state.loading = false;
-      state.error = action.error.message;
+      state.error = action.error;
     });
   },
 });
