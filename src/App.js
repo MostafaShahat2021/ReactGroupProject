@@ -1,9 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound';
 import Rockets from './components/rockets/Rockets';
+import { fetchRocketsData } from './redux/rockets/rocketsSlice';
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchRocketsData());
+  }, [dispatch]);
+
   return (
     <Router>
       <Navbar />
