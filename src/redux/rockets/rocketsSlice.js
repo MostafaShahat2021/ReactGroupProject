@@ -31,7 +31,7 @@ const rocketsSlice = createSlice({
         state.isLoading = false;
         const newRocket = [];
         const getRockets = action.payload;
-        console.log(getRockets);
+        // console.log(getRockets);
         getRockets?.forEach((rocket) => {
           newRocket.push({
             id: rocket.id,
