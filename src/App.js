@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound';
+import Rockets from './components/rockets/Rockets';
 
 function App() {
   return (
@@ -9,11 +10,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={(
-            <div>
-              <h1>Rockets</h1>
-            </div>
-          )}
+          element={<Rockets />}
         />
         <Route
           path="/missions"
