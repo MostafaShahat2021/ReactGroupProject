@@ -11,10 +11,8 @@ const baseUrl = 'https://api.spacexdata.com/v4/rockets';
 export const fetchRocketsData = createAsyncThunk('rockets/fetchRocketsData', async () => {
   try {
     const res = await axios.get(baseUrl);
-    // console.log(res);
     return res.data;
   } catch (error) {
-    // console.log(error);
     throw new Error('Failed to fetch rockets data');
   }
 });
@@ -31,7 +29,6 @@ const rocketsSlice = createSlice({
         state.isLoading = false;
         const newRocket = [];
         const getRockets = action.payload;
-        // console.log(getRockets);
         getRockets?.forEach((rocket) => {
           newRocket.push({
             id: rocket.id,
