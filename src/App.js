@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound';
-import Mission from './Pages/Mission';
+import Mission from './Pages/Mission/Mission';
 
 function App() {
   return (
