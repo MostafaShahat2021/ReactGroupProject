@@ -6,6 +6,7 @@ import NotFound from './components/NotFound';
 import Rockets from './Pages/rockets/Rockets';
 import { fetchRocketsData } from './redux/rockets/rocketsSlice';
 import Mission from './Pages/Mission/Mission';
+import MyProfile from './Pages/MyProfile/MyProfile';
 
 function App() {
   const dispatch = useDispatch();
@@ -25,11 +26,7 @@ function App() {
         <Route path="/missions" element={<Mission />} />
         <Route
           path="/profile"
-          element={(
-            <div>
-              <h1>profile</h1>
-            </div>
-          )}
+          element={<MyProfile />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>
