@@ -21,7 +21,7 @@ function MyProfile() {
           {rockets
             .filter((rocket) => rocket.reserved === true)
             .map((rocket) => (
-              <li key={rocket.rocket_id}>{rocket.name}</li>
+              <li key={rocket.id}>{rocket.name}</li>
             ))}
         </ul>
       </article>
