@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMission, joinMission } from '../../redux/mission/missionSlice';
+import {
+  fetchMission,
+  joinMission,
+  leaveMission,
+} from '../../redux/mission/missionSlice';
 import './Mission.css';
 
 function Mission() {
@@ -10,7 +14,9 @@ function Mission() {
   const handleJoinMission = (id) => {
     dispatch(joinMission(id));
   };
-
+  const handleLeaveMission = (id) => {
+    dispatch(leaveMission(id));
+  };
   useEffect(() => {
     dispatch(fetchMission());
   }, [dispatch]);
@@ -51,7 +57,13 @@ function Mission() {
                   </td>
                   <td>
                     {miss.reserved ? (
-                      <button type="button" className="btn-leave">
+                      <button
+                        type="button"
+                        className="btn-leave"
+                        onClick={() => {
+                          handleLeaveMission(miss.mission_id);
+                        }}
+                      >
                         Leave Mission
                       </button>
                     ) : (
