@@ -1,7 +1,9 @@
 import React from 'react';
 import './MyProfile.css';
+import { useSelector } from 'react-redux';
 
 function MyProfile() {
+  const { rockets } = useSelector((state) => state.rockets);
   return (
     <div className="profile-container">
       <article className="missions-container">
@@ -16,10 +18,11 @@ function MyProfile() {
       <article className="rockets-cntainer">
         <h2>My Rockets</h2>
         <ul className="rockets-list">
-          <li>Rocket-1</li>
-          <li>Rocket-2</li>
-          <li>Rocket-3</li>
-          <li>Rocket-4</li>
+          {rockets
+            .filter((rocket) => rocket.reserved === true)
+            .map((rocket) => (
+              <li key={rocket.rocket_id}>{rocket.name}</li>
+            ))}
         </ul>
       </article>
     </div>
