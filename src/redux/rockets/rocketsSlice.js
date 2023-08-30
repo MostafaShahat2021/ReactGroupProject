@@ -33,7 +33,7 @@ const rocketsSlice = createSlice({
       const id = action.payload;
       const updatedState = state.rockets.map((rocket) => {
         if (rocket.id !== id) return rocket;
-        return { ...rocket, reservred: false };
+        return { ...rocket, reserved: false };
       });
       state.rockets = updatedState;
     },
