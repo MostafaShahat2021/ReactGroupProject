@@ -9,8 +9,8 @@ function Rockets() {
 
   if (isLoading) {
     return (
-      <div>
-        <h3>Loading...</h3>
+      <div className="loading">
+        <h2>Loading...</h2>
       </div>
     );
   }
