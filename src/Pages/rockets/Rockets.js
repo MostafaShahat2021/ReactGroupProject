@@ -1,9 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './Rockets.css';
+import { rocketReserve } from '../../redux/rockets/rocketsSlice';
 
 function Rockets() {
-  const { rockets } = useSelector((store) => store.rockets);
+  const { rockets, isLoading } = useSelector((store) => store.rockets);
+  const dispatch = useDispatch();
+
+  if (isLoading) {
+    return <div><h3>Loading...</h3></div>;
+  }
   const renderRockets = rockets.map((rocket) => (
     <div className="rocket-container" key={rocket.id}>
       <div className="rocket-img">
@@ -14,7 +20,7 @@ function Rockets() {
         <div className="info-cntainer">
           <span className="description">{rocket.description}</span>
         </div>
-        <button className="rocket-btn" type="button">
+        <button className="rocket-btn" type="button" onClick={() => dispatch(rocketReserve(rocket.id))}>
           Reserve Rocket
         </button>
       </div>
