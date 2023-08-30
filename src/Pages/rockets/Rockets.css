@@ -16,10 +16,12 @@
   justify-content: space-around;
   width: 70%;
 }
+
 .description {
   border: 1px solid blue;
   line-height: 2em;
 }
+
 .rocket-btn {
   width: 15%;
   height: 3rem;
