@@ -22,6 +22,7 @@ function Rockets() {
       <div className="rocket-info">
         <h2>{rocket.name}</h2>
         <div className="info-cntainer">
+          {rocket.reserved ? <span className="reserved">Reserved </span> : ''}
           <span className="description">{rocket.description}</span>
         </div>
         {!rocket.reserved && (
