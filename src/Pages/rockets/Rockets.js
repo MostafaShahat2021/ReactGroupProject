@@ -40,7 +40,7 @@ function Rockets() {
             type="button"
             onClick={() => dispatch(rocketCancel(rocket.id))}
           >
-            Cansel Reservaition
+            Cancel Reservaition
           </button>
         )}
       </div>
