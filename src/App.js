@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Navbar from './components/Navbar/Navbar';
 import NotFound from './components/NotFound';
-import Rockets from './components/rockets/Rockets';
+import Rockets from './Pages/rockets/Rockets';
 import { fetchRocketsData } from './redux/rockets/rocketsSlice';
 import Mission from './Pages/Mission/Mission';
 
