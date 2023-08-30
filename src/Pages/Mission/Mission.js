@@ -44,14 +44,16 @@ function Mission() {
                   <td>{miss.description}</td>
                   <td className="member">
                     {miss.reserved ? (
-                      <span>Active Member</span>
+                      <span className="active-member">ACTIVE MEMBER</span>
                     ) : (
-                      <span>NOT A MEMBER</span>
+                      <span className="not">NOT A MEMBER</span>
                     )}
                   </td>
                   <td>
                     {miss.reserved ? (
-                      <button type="button">Leave Mission</button>
+                      <button type="button" className="btn-leave">
+                        Leave Mission
+                      </button>
                     ) : (
                       <button
                         className="btn-join"
