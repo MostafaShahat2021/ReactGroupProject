@@ -35,8 +35,16 @@ table tbody tr:nth-child(even) {
   white-space: nowrap;
 }
 
-.member span {
+.not {
   background-color: #838181;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.active-member {
+  background-color: rgb(98, 191, 223);
   color: #fff;
   padding: 2px 8px;
   border-radius: 5px;
@@ -45,4 +53,10 @@ table tbody tr:nth-child(even) {
 
 .btn-join {
   white-space: nowrap;
+}
+
+.btn-leave {
+  white-space: nowrap;
+  color: red;
+  border: 1px solid red;
 }

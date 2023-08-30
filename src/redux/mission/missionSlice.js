@@ -16,7 +16,7 @@ export const fetchMission = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      return error;
+      return error.message;
     }
   },
 );
@@ -24,6 +24,23 @@ export const fetchMission = createAsyncThunk(
 const missionSlice = createSlice({
   name: 'mission',
   initialState,
+  reducers: {
+    joinMission: (state, action) => {
+      const missionId = action.payload;
+      const updatedState = state.mission.map((mission) => (mission.mission_id !== missionId
+        ? mission
+        : { ...mission, reserved: true }));
+      state.mission = updatedState;
+    },
+
+    leaveMission: (state, action) => {
+      const missionId = action.payload;
+      const updatedState = state.mission.map((mission) => (mission.mission_id !== missionId
+        ? mission
+        : { ...mission, reserved: false }));
+      state.mission = updatedState;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchMission.pending, (state) => {
       state.loading = true;
@@ -40,4 +57,5 @@ const missionSlice = createSlice({
   },
 });
 
+export const { joinMission, leaveMission } = missionSlice.actions;
 export default missionSlice.reducer;
