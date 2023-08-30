@@ -31,7 +31,7 @@ const rocketsSlice = createSlice({
     },
     rocketCancel: (state, action) => {
       const id = action.payload;
-      const updatedState = state.rocket.map((rocket) => {
+      const updatedState = state.rockets.map((rocket) => {
         if (rocket.id !== id) return rocket;
         return { ...rocket, reservred: false };
       });

@@ -8,7 +8,11 @@ function Rockets() {
   const dispatch = useDispatch();
 
   if (isLoading) {
-    return <div><h3>Loading...</h3></div>;
+    return (
+      <div>
+        <h3>Loading...</h3>
+      </div>
+    );
   }
   const renderRockets = rockets.map((rocket) => (
     <div className="rocket-container" key={rocket.id}>
@@ -20,12 +24,24 @@ function Rockets() {
         <div className="info-cntainer">
           <span className="description">{rocket.description}</span>
         </div>
-        <button className="rocket-btn" type="button" onClick={() => dispatch(rocketReserve(rocket.id))}>
-          Reserve Rocket
-        </button>
-        <button className="rocket-btn" type="button" onClick={() => dispatch(rocketCancel(rocket.id))}>
-          Cansel Reservaition
-        </button>
+        {!rocket.reserved && (
+          <button
+            className="rocket-btn"
+            type="button"
+            onClick={() => dispatch(rocketReserve(rocket.id))}
+          >
+            Reserve Rocket
+          </button>
+        )}
+        {rocket.reserved && (
+          <button
+            className="rocket-btn"
+            type="button"
+            onClick={() => dispatch(rocketCancel(rocket.id))}
+          >
+            Cansel Reservaition
+          </button>
+        )}
       </div>
     </div>
   ));
