@@ -21,38 +21,26 @@ export const fetchMission = createAsyncThunk(
   },
 );
 
-export const joinMission = createAsyncThunk(
-  'joinMission',
-  async (missionId) => {
-    try {
-      const response = await axios.get(
-        `https://api.spacexdata.com/v3/missions/${missionId}`,
-        { reserved: true },
-      );
-      return response.data.mission_id;
-    } catch (error) {
-      return error.message;
-    }
-  },
-);
-export const leaveMission = createAsyncThunk(
-  'leaveMission',
-  async (missionId) => {
-    try {
-      const response = await axios.get(
-        `https://api.spacexdata.com/v3/missions/${missionId}`,
-        { reserved: false },
-      );
-      return response.data.mission_id;
-    } catch (error) {
-      return error.message;
-    }
-  },
-);
-
 const missionSlice = createSlice({
   name: 'mission',
   initialState,
+  reducers: {
+    joinMission: (state, action) => {
+      const missionId = action.payload;
+      const updatedState = state.mission.map((mission) => (mission.mission_id !== missionId
+        ? mission
+        : { ...mission, reserved: true }));
+      state.mission = updatedState;
+    },
+
+    leaveMission: (state, action) => {
+      const missionId = action.payload;
+      const updatedState = state.mission.map((mission) => (mission.mission_id !== missionId
+        ? mission
+        : { ...mission, reserved: false }));
+      state.mission = updatedState;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchMission.pending, (state) => {
       state.loading = true;
@@ -66,27 +54,8 @@ const missionSlice = createSlice({
       state.loading = false;
       state.error = action.error;
     });
-    builder.addCase(joinMission.fulfilled, (state, action) => {
-      const missionId = action.payload;
-      state.mission = state.mission.map((mission) => (mission.mission_id !== missionId
-        ? mission
-        : { ...mission, reserved: true }));
-      state.error = '';
-    });
-    builder.addCase(joinMission.rejected, (state, action) => {
-      state.error = action.error;
-    });
-    builder.addCase(leaveMission.fulfilled, (state, action) => {
-      const missionId = action.payload;
-      state.mission = state.mission.map((mission) => (mission.mission_id !== missionId
-        ? mission
-        : { ...mission, reserved: false }));
-      state.error = '';
-    });
-    builder.addCase(leaveMission.rejected, (state, action) => {
-      state.error = action.error;
-    });
   },
 });
 
+export const { joinMission, leaveMission } = missionSlice.actions;
 export default missionSlice.reducer;
