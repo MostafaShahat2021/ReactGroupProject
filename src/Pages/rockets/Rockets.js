@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './Rockets.css';
-import { rocketReserve } from '../../redux/rockets/rocketsSlice';
+import { rocketReserve, rocketCancel } from '../../redux/rockets/rocketsSlice';
 
 function Rockets() {
   const { rockets, isLoading } = useSelector((store) => store.rockets);
@@ -22,6 +22,9 @@ function Rockets() {
         </div>
         <button className="rocket-btn" type="button" onClick={() => dispatch(rocketReserve(rocket.id))}>
           Reserve Rocket
+        </button>
+        <button className="rocket-btn" type="button" onClick={() => dispatch(rocketCancel(rocket.id))}>
+          Cansel Reservaition
         </button>
       </div>
     </div>
