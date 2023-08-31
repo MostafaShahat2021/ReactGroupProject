@@ -47,7 +47,8 @@ table tbody tr:nth-child(even) {
   font-size: 0.8rem;
 }
 
-.btn-join, .member {
+.btn-join,
+.member {
   white-space: nowrap;
 }
 
