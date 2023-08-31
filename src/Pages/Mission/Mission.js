@@ -1,10 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-  fetchMission,
-  joinMission,
-  leaveMission,
-} from '../../redux/mission/missionSlice';
+import { joinMission, leaveMission } from '../../redux/mission/missionSlice';
 import './Mission.css';
 
 function Mission() {
@@ -17,9 +13,6 @@ function Mission() {
   const handleLeaveMission = (id) => {
     dispatch(leaveMission(id));
   };
-  useEffect(() => {
-    dispatch(fetchMission());
-  }, [dispatch]);
 
   return (
     <section className="mission">
