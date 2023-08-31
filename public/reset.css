@@ -35,6 +35,7 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  overflow-x: hidden;
 }
 
 /* A elements that don't have a class get default styles */
@@ -42,13 +43,13 @@ a:not([class]) {
   text-decoration-skip-ink: auto;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
-ul li{
-    list-style: none;
-    list-style-type: none;
+ul li {
+  list-style: none;
+  list-style-type: none;
 }
 
 /* Make images easier to work with */
@@ -69,9 +70,9 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
-   scroll-behavior: auto;
+    scroll-behavior: auto;
   }
-  
+
   *,
   *::before,
   *::after {
