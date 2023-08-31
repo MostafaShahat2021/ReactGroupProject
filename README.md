@@ -28,7 +28,8 @@
 - [🙏 Acknowledgements](#acknowledgements)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->#  📖 ReactGroupProject <a name="about-project"></a>
+<!-- PROJECT DESCRIPTION --> 
+# 📖 ReactGroupProject <a name="about-project"></a>
 
 "ReactGroupProject" is a dynamic Space Travelers' Hub website. This repository serves as a showcase to demonstrate proficiency in utilizing different tools and implementing established practices acquired during prior stages. This is a collaborative project.
 
