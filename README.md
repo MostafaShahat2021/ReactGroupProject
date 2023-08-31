@@ -51,10 +51,6 @@ _[ReactGroupProject]_ is React Redux project
 - _Join Mission_
 - _Users profile_
 
-## 🚀 Live Demo
-
-- Coming Soon
-
 ## 💻 Getting Started <a name="getting-started"></a>
 
 To get a local copy up and running, follow these steps.
