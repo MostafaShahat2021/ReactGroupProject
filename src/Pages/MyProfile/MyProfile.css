@@ -1,6 +1,6 @@
 .profile-container {
   display: flex;
-  justify-content:space-around;
+  justify-content: space-around;
 }
 
 .profile-container h2 {
@@ -9,18 +9,21 @@
   margin-bottom: 2rem;
 }
 
-.missions-container, .rockets-cntainer {
+.missions-container,
+.rockets-cntainer {
   width: 60%;
   margin: 1rem;
 }
 
-.missions-list, .rockets-list {
+.missions-list,
+.rockets-list {
   width: 100%;
   height: 80vh;
   margin-top: 2rem;
 }
 
-.missions-list li, .rockets-list li {
+.missions-list li,
+.rockets-list li {
   border: 1px solid #a39f9f;
   padding: 1rem;
 }
