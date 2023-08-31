@@ -8,7 +8,7 @@ nav {
   box-shadow: 0 0 5px #fff;
 }
 
-.nav-link {
+.nav-link, .active-link {
   color: #1b1beb;
 }
 
@@ -19,10 +19,6 @@ nav {
   height: 1px;
   background-color: #1b1beb;
   transition: width 0.3s ease-in-out;
-}
-
-.active-link {
-  color: #1b1beb;
 }
 
 .active-link::after {
