@@ -12,13 +12,13 @@ export const fetchMission = createAsyncThunk(
   async () => {
     try {
       const response = await axios.get(
-        'https://api.spacexdata.com/v3/missions',
+        'https://api.spacexdata.com/v3/missions'
       );
       return response.data;
     } catch (error) {
-      return error.message;
+      throw new Error(error.message);
     }
-  },
+  }
 );
 
 const missionSlice = createSlice({
@@ -27,18 +27,17 @@ const missionSlice = createSlice({
   reducers: {
     joinMission: (state, action) => {
       const missionId = action.payload;
-      const updatedState = state.mission.map((mission) => (mission.mission_id !== missionId
-        ? mission
-        : { ...mission, reserved: true }));
-      state.mission = updatedState;
+      state.mission = state.mission.map((mission) => {
+        if (mission.mission_id !== missionId) return mission;
+        return { ...mission, reserved: true };
+      });
     },
-
     leaveMission: (state, action) => {
       const missionId = action.payload;
-      const updatedState = state.mission.map((mission) => (mission.mission_id !== missionId
-        ? mission
-        : { ...mission, reserved: false }));
-      state.mission = updatedState;
+      state.mission = state.mission.map((mission) => {
+        if (mission.mission_id !== missionId) return mission;
+        return { ...mission, reserved: false };
+      });
     },
   },
   extraReducers: (builder) => {
@@ -52,7 +51,7 @@ const missionSlice = createSlice({
     });
     builder.addCase(fetchMission.rejected, (state, action) => {
       state.loading = false;
-      state.error = action.error;
+      state.error = action.error.message;
     });
   },
 });
