@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import store from '../../redux/store';
 import Navbar from './Navbar';
 
-it('Rockets should render', () => {
-  const rockets = render(
+it('Navbar should render', () => {
+  const navbar = render(
     <Provider store={store}>
       <BrowserRouter>
         <Navbar />
       </BrowserRouter>
     </Provider>,
   );
-  expect(rockets).toMatchSnapshot();
+  expect(navbar).toMatchSnapshot();
 });
