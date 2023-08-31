@@ -4,15 +4,17 @@ import { useSelector } from 'react-redux';
 
 function MyProfile() {
   const { rockets } = useSelector((state) => state.rockets);
+  const missions = useSelector((state) => state.mission.mission);
   return (
     <div className="profile-container">
       <article className="missions-container">
         <h2>My Missions</h2>
         <ul className="missions-list">
-          <li>Mission-1</li>
-          <li>Mission-2</li>
-          <li>Mission-3</li>
-          <li>Mission-4</li>
+          {missions
+            .filter((mission) => mission.reserved === true)
+            .map((miss) => (
+              <li key={miss.mission_id}>{miss.mission_name}</li>
+            ))}
         </ul>
       </article>
       <article className="rockets-cntainer">
