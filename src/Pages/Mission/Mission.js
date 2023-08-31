@@ -42,14 +42,15 @@ function Mission() {
                   </td>
                   <td>{miss.description}</td>
                   <td className="member">
-                    {miss.reserved ? (
+                    {miss.reserved && (
                       <span className="active-member">ACTIVE MEMBER</span>
-                    ) : (
+                    )}
+                    {!miss.reserved && (
                       <span className="not">NOT A MEMBER</span>
                     )}
                   </td>
                   <td>
-                    {miss.reserved ? (
+                    {miss.reserved && (
                       <button
                         type="button"
                         className="btn-leave"
@@ -59,7 +60,8 @@ function Mission() {
                       >
                         Leave Mission
                       </button>
-                    ) : (
+                    )}
+                    {!miss.reserved && (
                       <button
                         className="btn-join"
                         type="button"
