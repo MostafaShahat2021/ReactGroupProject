@@ -1,0 +1,59 @@
+.mission {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+table {
+  width: 95%;
+  border-collapse: collapse;
+  margin: 1.5em 2em;
+}
+
+table thead tr th {
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+table tbody tr td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ccc;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.not {
+  background-color: #838181;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.active-member {
+  background-color: rgb(98, 191, 223);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+}
+
+.btn-join,
+.member {
+  white-space: nowrap;
+}
+
+.btn-leave {
+  white-space: nowrap;
+  color: red;
+  border: 1px solid red;
+}
